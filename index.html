@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="design.css">
+   
+</head>
+<body>
+      <div class="page">
+        <div class="cards">
+            <section class="input-card">
+                <form class="input-form">
+                    <input type="text" id="input" placeholder="Enter Task">
+                    <button type="submit" class="bt" >add</button>
+                </form>
+            </section>
+            <section class="show">
+                <ul id="task-list">
+
+                </ul>
+            </section>
+        </div>
+
+      </div>
+   <!---overlay -->
+
+   <div id="overlay" class="hidden">
+        <div id="modal">
+            <button id="btnclose" type="button">x</button>
+            <p id="fulltext"></p>
+        </div>
+   </div>
+
+   <script type="module" src="source.js"></script>
+
+</body>
+</html>

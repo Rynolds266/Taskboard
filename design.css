@@ -1,0 +1,163 @@
+body{
+    margin: 0;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+}
+
+.page{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f8;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    
+
+}
+
+.input-card,
+.show{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px; 
+}
+
+.bt{
+    background-color: #6c63ff;
+    color:#ffffff;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+#input{
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    flex: 1;
+    padding: 10px;
+}
+
+#input:focus {
+  border-color: #6c63ff;
+  outline: none;
+}
+.bt:hover{
+    background-color: #574fe0;
+}
+.bt:active{
+    background-color: #4a43c4;;
+}
+#task-list li{
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eeeeee;
+    margin: 0;
+    padding: 10px 16px;
+
+
+    
+    
+    
+}
+#task-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+   scrollbar-width: none;
+   
+    
+}
+
+#task-list li:last-child{
+    border-bottom: none;
+}
+
+#task-list::-webkit-scrollbar{
+    display: none;
+}
+
+.input-form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/*
+.task-text{
+    display: block;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}**/
+
+.task-text{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#overlay{
+     position: fixed;
+     inset: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: rgba(0,0,0,0.4);
+}
+
+#modal{
+    padding: 16px;
+    background: white;
+    border-radius:  10px;
+    width: min(500px, 90vh);
+}
+
+
+#overlay.hidden{
+    display: none;
+}
+
+
+
+.btnDelete{
+    display: inline flex;
+    background: none;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnDelete:hover {
+  color: #c0392b;
+}
+
+.btnDelete:active {
+  transform: scale(0.95);
+}
+
+.span .checkbox{
+    justify-content: end;
+}
+
