@@ -74,9 +74,6 @@ function add(){
      //screanRender();
     
     render()
-   
-    
-
 }
 
 // create a render to build all the view UI
@@ -89,6 +86,7 @@ function render(){
   Todo.forEach( (task)=>{
     let li=document.createElement("li");
     li.dataset.id=task.id
+    li.classList.toggle("done",task.complete);
     
     let span = document.createElement("span");
     span.className="task-text"
@@ -102,11 +100,16 @@ function render(){
     let checkbox = document.createElement("input")
     checkbox.type="checkbox"
     checkbox.className="complete"
-    task.complete= checkbox
+    checkbox.checked=task.complete
 
-    li.append(checkbox)
+    let div = document.createElement("div");
+    div.className="task-action"
+    div.append(checkbox);
+    div.append(btnDelete)
+
+   // li.append(checkbox)
     li.append(span)
-    li.append(btnDelete)
+    li.append(div)
     tasklist.appendChild(li)
 
     requestAnimationFrame(()=>screanRender(span))
@@ -137,7 +140,7 @@ function deletion(){
   
   document.getElementById("task-list").addEventListener("click",(e)=>{
   const btnDelete = e.target.closest(".btnDelete");
-   console.log("clicked delete")
+   
 
   if (!btnDelete) return
 
@@ -155,3 +158,14 @@ function deletion(){
 
 deletion();
 
+document.getElementById("task-list").addEventListener("change",(e)=>{
+  if(!e.target.matches(".complete"))return
+
+  const li = e.target.closest("li")
+  const id = Number(li.dataset.id) 
+  const task = Todo.find(t=>t.id===id)
+  if(!task)return
+  task.complete = e.target.checked
+  li.classList.toggle("done",task.complete)
+   
+})

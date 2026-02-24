@@ -161,3 +161,17 @@ body{
     justify-content: end;
 }
 
+.task-action{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.done span{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.complete{
+    cursor: pointer;
+}
+
